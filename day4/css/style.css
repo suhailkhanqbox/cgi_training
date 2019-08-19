@@ -1,7 +1,16 @@
 * {
     box-sizing: border-box;
   }
-  
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
