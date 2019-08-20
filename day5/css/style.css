@@ -1,4 +1,8 @@
 .navbar navbar-inverse{
     padding: 20px;
 }
-#myNavbar li{ }
+
+html body {
+    
+    /* overflow-x: hidden; */
+}
