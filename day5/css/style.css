@@ -6,3 +6,18 @@ html body {
     
     /* overflow-x: hidden; */
 }
+
+.thumbnail{
+    width: 280px; 
+    height:340px;
+}
+
+.navbar-brand {
+    font-size: 30px; 
+    color: #ffffff;
+}
+
+.pagination{
+    padding-left: 380px;
+
+}
