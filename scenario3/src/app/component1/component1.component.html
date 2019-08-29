@@ -1,1 +1,10 @@
 <p>component1 works!</p>
+
+
+<input [(ngModel)]="name" type="text"> 
+
+<app-component2 [parentData]="name"></app-component2>
+<!--storing input in name variable then passing that with parentData variable to child 
+component2.ts file, then rename it to child in ts file and fially printed in component2,html 
+file
+--> 
