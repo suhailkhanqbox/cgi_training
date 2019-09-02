@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DepartmentDetailsComponent } from './department-details/department-details.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
 //{path: '', component:DepartmentListComponent},//default route using component
 {path: 'departments', component:DepartmentListComponent},
 {path: 'employees', component:EmployeeListComponent},
+{path: 'departments/:id', component:DepartmentDetailsComponent},
 {path: "**", component: PageNotFoundComponent} //wild card route, 
 //it should be end of all path
 
@@ -22,4 +24,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents =[DepartmentListComponent, 
                                  EmployeeListComponent,
+                                 DepartmentDetailsComponent,
                                  PageNotFoundComponent]
