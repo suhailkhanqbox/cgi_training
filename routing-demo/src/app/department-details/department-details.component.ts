@@ -9,9 +9,13 @@ import { parse } from 'url';
       department-details works!
       you selected deparment {{departmentId}}
     </p>
-    
-    <a (click)= "goPrevious()"> Previous</a>
-    <a (click)= "goNext()"> Next</a> 
+    <router-outlet></router-outlet>
+    <div> 
+    <button (click)="showOverview()">Overview</button>
+    <button (click)="showContact()">Contact</button>
+    </div>
+    <button (click)= "goPrevious()"> Previous</button>
+    <button (click)= "goNext()"> Next</button> 
     <div>
     <button (click) = "gotoDepartments()"> </button>
     </div>
@@ -49,5 +53,13 @@ export class DepartmentDetailsComponent implements OnInit {
 let selectedId = this.departmentId ? this.departmentId :null;
 //this.router.navigate(['/departments', {id:selectedId}]);
 this.router.navigate(['../',{id:selectedId}],{relativeTo: this.route});
+  }
+
+  showContact(){
+      this.router.navigate(['contact'], {relativeTo: this.route});
+  }
+
+  showOverview(){
+      this.router.navigate(['overview'],{relativeTo: this.route});
   }
 }
