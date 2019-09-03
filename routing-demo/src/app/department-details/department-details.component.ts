@@ -12,6 +12,9 @@ import { parse } from 'url';
     
     <a (click)= "goPrevious()"> Previous</a>
     <a (click)= "goNext()"> Next</a> 
+    <div>
+    <button (click) = "gotoDepartments()"> </button>
+    </div>
   `,
   styles: []
 })
@@ -39,5 +42,12 @@ export class DepartmentDetailsComponent implements OnInit {
   goNext(){
     let nextId= this.departmentId+1;
     this.router.navigate(['/departments',nextId]);
+  }
+
+  gotoDepartments(){
+
+let selectedId = this.departmentId ? this.departmentId :null;
+//this.router.navigate(['/departments', {id:selectedId}]);
+this.router.navigate(['../',{id:selectedId}],{relativeTo: this.route});
   }
 }
