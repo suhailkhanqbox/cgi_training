@@ -8,10 +8,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class YoutubeService {
+  public url:string="";
 
   apiKey : string = 'AIzaSyAFm4drVZmnAEoKaBqdnscZE74-J4f2mAs';
 
   constructor(public http: HttpClient) { }
+  searchyoutube(value){
+    this.url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=" +value+"&key=AIzaSyAFm4drVZmnAEoKaBqdnscZE74-J4f2mAs" ;
+    return this.http.get(this.url).subscribe();
+ 
+  }
+  returnSearch():Observable<any>{
+    return this.http.get<any>(this.url);
+  }
 
   getVideosForChanel(channel, maxResults): Observable<Object> {
     let url = 'https://www.googleapis.com/youtube/v3/search?key=' + this.apiKey + '&channelId=' + channel + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults

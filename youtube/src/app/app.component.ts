@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { YoutubeService } from './youtube.service';
 import { takeUntil } from 'rxjs/operators';
+import {ActivatedRoute,Router} from '@angular/router';
+// import { element } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +12,15 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public value = "";
+ 
+
+
   videos: any[];
   private unsubscribe$: Subject<any> = new Subject();
 
-  constructor(private spinner: NgxSpinnerService, private youTubeService: YoutubeService) { }
-
+  constructor(private spinner: NgxSpinnerService, private youTubeService: YoutubeService,private  route:ActivatedRoute,private router:Router) { }
+  
 
   ngOnInit() {
     this.spinner.show()
@@ -30,8 +36,12 @@ export class AppComponent {
         for (let element of lista["items"]) {
           this.videos.push(element)
         }
+       // console.log(element);
 
       });
   }
+  onClick(value){
+    this.youTubeService.searchyoutube(value);
+   }
 
 }
