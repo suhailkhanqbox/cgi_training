@@ -28,10 +28,12 @@
             <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a>
           <div class="card-body text-center">
             <h5 class="card-title mb-0">
-              <a href="">{{video.snippet.title}}
-              </a></h5>
-              <button (click)= "videoPlay(video.Id)">Watch Locally</button>
-            <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div>
+              <a href="" class="title">{{video.snippet.title}}
+              </a></h5><button (click)="videoplay(video.id.videoId)" class="watch" >Watch Locally</button>
+              <span class="sp"></span>
+              <button (click)= "addtofav(video.snippet)" class="fav">Favourite</button>
+              
+                 <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div>
            </div>
         </div>
       </div>

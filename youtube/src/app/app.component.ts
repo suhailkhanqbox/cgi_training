@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { YoutubeService } from './youtube.service';
 import { takeUntil } from 'rxjs/operators';
-import {ActivatedRoute,Router} from '@angular/router';
+import {ActivatedRoute,Router,Route} from '@angular/router';
 // import { element } from 'protractor';
 
 @Component({
@@ -43,5 +43,16 @@ export class AppComponent {
   onClick(value){
     this.youTubeService.searchyoutube(value);
    }
+
+   videoplay(videoId)
+   {
+     console.log(videoId,"Fff");
+      this.router.navigate(['']).then(()=> this.router.navigateByUrl(`display/${videoId}`));
+   }
+ 
+   addtofav(val){
+        val.comment="";
+        this.youTubeService.setFavourite(val).subscribe();
+      }
 
 }

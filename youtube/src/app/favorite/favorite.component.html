@@ -1,0 +1,16 @@
+<p>favorite works!</p>
+<div *ngIf="resp2">
+    <div *ngFor= "let x of resp2">
+            <h4>{{x.title}}</h4>
+            <img src="{{x.thumbnails.default.url}}">
+            <input #input type="text" name="comment" value="Enter Comment">
+            <button (click)="addcomm(x.id,input.value)">Add Comment</button>
+    
+            <p style="commdisp">Comments Added: {{x.comment}}</p>
+
+    </div>
+    <div>
+
+    </div>
+          
+</div>

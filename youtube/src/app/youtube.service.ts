@@ -20,7 +20,7 @@ export class YoutubeService {
   }
   returnSearch():Observable<any>{
     return this.http.get<any>(this.url);
-  }
+  } //return when called from serachbar component
 
   getVideosForChanel(channel, maxResults): Observable<Object> {
     let url = 'https://www.googleapis.com/youtube/v3/search?key=' + this.apiKey + '&channelId=' + channel + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults
@@ -28,5 +28,19 @@ export class YoutubeService {
       .pipe(map((res) => {
         return res;
       }))
+  }
+
+  setFavourite(value):Observable<any>
+  {
+    return this.http.post<any>("http://localhost:3000/favlist/",value);
+  }
+  getFavourite():Observable<any>{
+    return this.http.get<any>("http://localhost:3000/favlist/");
+  }
+
+  setcomment(input,data):Observable<any>
+  {
+    console.log(input+" "+data);
+    return this.http.patch<any>("http://localhost:3000/favlist/"+input,{"comment":data});
   }
 }

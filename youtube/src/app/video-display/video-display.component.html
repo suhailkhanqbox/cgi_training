@@ -1,1 +1,14 @@
-<p>video-display works!</p>
+<div>
+     <iframe class="frame" [src]="safeSrc"
+         width="800" height="450" frameborder="0"></iframe>
+         <div class="commentsec"> 
+                <br> 
+         <button (click)= "putfavourite()"  class="favlist">Favorite List</button>
+              <br>
+              <br>
+               <input #videocomment type="text" value="Add comment"> 
+               <button (click)="vidcom(videocomment.value) " class="commentbtn">Comment</button>
+               <br>
+            </div>
+            <br>
+    </div>
