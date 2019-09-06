@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - q5",
+            "request": "launch",
+            "mainClass": "q5",
+            "projectName": "javaPE1_52fdb970"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - q4",
+            "request": "launch",
+            "mainClass": "q4",
+            "projectName": "javaPE1_52fdb970"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - q3",
             "request": "launch",
             "mainClass": "q3",
