@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - q3",
+            "request": "launch",
+            "mainClass": "q3",
+            "projectName": "javaPE1_52fdb970"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - palindrome",
             "request": "launch",
             "mainClass": "palindrome",
