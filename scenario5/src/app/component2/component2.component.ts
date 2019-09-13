@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Component2Component implements OnInit {
 
   constructor() { }
-
+public ptg="";
   ngOnInit() {
   }
 

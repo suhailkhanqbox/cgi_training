@@ -15,7 +15,7 @@ const routes: Routes = [
 {path: 'employees', component:EmployeeListComponent},
 {
   path: 'departments/:id', 
-  component:DepartmentDetailsComponent,
+  component: DepartmentDetailsComponent,
   children:
   [
       {path:'overview', component: DepartmentOverviewComponent},
