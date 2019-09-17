@@ -6,9 +6,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ExceptionStringTest {
-
-    private ExceptionString e1=new ExceptionString();
+public class question7Test {
+    private question7 e1= new question7();
     @Before
     public void setUp() throws Exception {
     }
@@ -18,12 +17,9 @@ public class ExceptionStringTest {
     }
 
     @Test(expected = Exception.class)
-    public void testcase2()
-    {
-       String[] s={"x","y"}
-        e1.main(s);
+    public void testcase2() throws Exception {
+        e1.main();
 
 
     }
 }
-
