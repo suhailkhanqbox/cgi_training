@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Claim {
-    
+
     private int ClaimId;
     private Date claimDate;
     private String Description;
